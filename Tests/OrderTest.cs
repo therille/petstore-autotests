@@ -15,7 +15,8 @@ namespace PetStoreAutotests.Tests
         [Fact]
         public void OrdersCRUDTest()
         {
-            Log.Information("\nTEST: Verify Order can be created/updated/deleted\n");
+            Log.Information("\nTEST: Verify Order can be created/deleted\n");
+            // No PUT method for Order to be updated
 
             var newPet = PetActions.CreatePet("Milica", PetStatus.available);
             var response = PetActions.AddPetToStore(newPet);
@@ -43,7 +44,7 @@ namespace PetStoreAutotests.Tests
         [Fact]
         public void InvalidOrderGet()
         {
-            Log.Information("\nTEST: Verify \"Not Found\" for deleting invalid order\n");
+            Log.Information("\nTEST: Verify \"Not Found\" for getting deleted order\n");
 
             var newPet = PetActions.CreatePet("Mrvica", PetStatus.available);
             var response = PetActions.AddPetToStore(newPet);
@@ -66,7 +67,7 @@ namespace PetStoreAutotests.Tests
         [Fact]
         public void InvalidOrderDelete()
         {
-            Log.Information("\nTEST: Verify \"Not Found\" for deleting invalid order\n");
+            Log.Information("\nTEST: Verify \"Not Found\" for deleting deleted order\n");
 
             var newPet = PetActions.CreatePet("Gricko", PetStatus.available);
             var response = PetActions.AddPetToStore(newPet);

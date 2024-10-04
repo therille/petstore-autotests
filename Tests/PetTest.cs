@@ -15,7 +15,7 @@ namespace PetStoreAutotests.Tests
         [Fact]
         public void PetsCRUDTest()
         {
-            Log.Information("\nTEST: Verify pets can be Created/Updated/Deleted\n");
+            Log.Information("\nTEST: Verify pets can be created/updated/deleted\n");
 
             var newPet = PetActions.CreatePet("Snowflake", PetStatus.available);
             var response = PetActions.AddPetToStore(newPet);

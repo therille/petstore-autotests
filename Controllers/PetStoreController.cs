@@ -43,12 +43,12 @@ namespace PetStoreAutotests.Controllers
 
         public RestResponse GetResponse(RestClient client, RestRequest request)
         {
-            Log.Information("-------------------- Request --------------------");
+            Log.Information("------------------------- Request -------------------------");
             Log.Information(request.Method.ToString() + " " + typeof(T).Name + ": " + PetStoreUrls.BaseUrl + request.Resource.ToString());
 
             var response = client.Execute(request);
 
-            Log.Information("-------------------- Response --------------------");
+            Log.Information("------------------------- Response -------------------------");
             Log.Information("Status: " + (int)response.StatusCode + " " + response.StatusCode.ToString());
             if (!string.IsNullOrEmpty(response.Content))
             {
